@@ -902,8 +902,8 @@
                 <a href="#hero">Cari Johnson</a>
             </div>
             <ul class="nav-items">
+                <li><a href="#hero">About</a></li>
                 <li><a href="#projects">Work</a></li>
-                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -928,6 +928,20 @@
                 width="220"
                 height="275"
             >
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="about-container">
+                <h2>How I Approach Design</h2>
+                <p>Five years in financial services, I've learned that great design isn't about beautiful interfaces—it's about systems that change behavior. Early in my career, I would optimize for visual polish. Now I start with constraints: regulatory guardrails, legacy systems, member pain. That's where the real work lives.</p>
+
+                <p>I lean on JTBD (Jobs to Be Done) and OOUX (Object-Oriented UX) to ground decisions. These frameworks aren't decorative—they're decision-making tools. JTBD helps me understand the real job a member is trying to do. OOUX helps me design systems that scale, not just screens. The result: products that ship faster and last longer.</p>
+
+                <p>I've integrated Claude and Cursor into my workflow to work faster at the thinking level. I use LLMs to synthesize qualitative research and surface behavioral patterns in hours instead of days. Cursor helps me collaborate with engineers on handoff friction—turning Figma components into code faster than traditional specs. These tools are amplifiers, not replacements; they free me to focus on strategic decisions.</p>
+
+                <p>Let's talk about how systems-thinking and outcomes-driven design can reduce member friction on your platform.</p>
+            </div>
         </section>
 
         <!-- Project Grid -->
@@ -982,20 +996,6 @@
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about">
-            <div class="about-container">
-                <h2>How I Approach Design</h2>
-                <p>Five years in financial services, I've learned that great design isn't about beautiful interfaces—it's about systems that change behavior. Early in my career, I would optimize for visual polish. Now I start with constraints: regulatory guardrails, legacy systems, member pain. That's where the real work lives.</p>
-
-                <p>I lean on JTBD (Jobs to Be Done) and OOUX (Object-Oriented UX) to ground decisions. These frameworks aren't decorative—they're decision-making tools. JTBD helps me understand the real job a member is trying to do. OOUX helps me design systems that scale, not just screens. The result: products that ship faster and last longer.</p>
-
-                <p>I've integrated Claude and Cursor into my workflow to work faster at the thinking level. I use LLMs to synthesize qualitative research and surface behavioral patterns in hours instead of days. Cursor helps me collaborate with engineers on handoff friction—turning Figma components into code faster than traditional specs. These tools are amplifiers, not replacements; they free me to focus on strategic decisions.</p>
-
-                <p>Let's talk about how systems-thinking and outcomes-driven design can reduce member friction on your platform.</p>
-            </div>
-        </section>
-
         <!-- Contact Section -->
         <section id="contact">
             <div class="contact-container">
@@ -1020,8 +1020,8 @@
 
     <!-- Bottom Nav (mobile) -->
     <nav class="bottom-nav" aria-label="Main navigation">
+        <a href="#hero" class="bottom-nav-item">About</a>
         <a href="#projects" class="bottom-nav-item">Work</a>
-        <a href="#about" class="bottom-nav-item">About</a>
         <a href="#contact" class="bottom-nav-item">Contact</a>
     </nav>
 
@@ -1050,14 +1050,14 @@
         }
 
         // Scroll spy — highlight active section in bottom nav
-        const sections = ['projects', 'about', 'contact'].map(id => document.getElementById(id));
+        const sections = ['projects', 'contact'].map(id => document.getElementById(id));
         const navItems = document.querySelectorAll('.bottom-nav-item');
 
         function updateActiveNav() {
             const scrollMid = window.scrollY + window.innerHeight / 2;
-            let activeIndex = 0;
+            let activeIndex = 0; // About is default
             sections.forEach((section, i) => {
-                if (section && section.offsetTop <= scrollMid) activeIndex = i;
+                if (section && section.offsetTop <= scrollMid) activeIndex = i + 1;
             });
             navItems.forEach((item, i) => item.classList.toggle('active', i === activeIndex));
         }
