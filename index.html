@@ -1041,18 +1041,8 @@
         if (window.location.hash) history.replaceState(null, '', window.location.pathname);
         window.scrollTo(0, 0);
 
-        function smoothScrollTo(targetY, duration) {
-            const startY = window.scrollY;
-            const diff = targetY - startY;
-            let startTime = null;
-            function step(ts) {
-                if (!startTime) startTime = ts;
-                const t = Math.min((ts - startTime) / duration, 1);
-                const ease = 1 - Math.pow(1 - t, 4); // ease-out quart: fast start, soft brake
-                window.scrollTo(0, startY + diff * ease);
-                if (t < 1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
+        function smoothScrollTo(targetY) {
+            window.scrollTo({ top: targetY, behavior: 'smooth' });
         }
 
         // Intercept all in-page anchor clicks to prevent hash from entering the URL
@@ -1061,7 +1051,7 @@
                 const target = document.querySelector(link.getAttribute('href'));
                 if (target) {
                     e.preventDefault();
-                    smoothScrollTo(target.offsetTop, 500);
+                    smoothScrollTo(target.offsetTop);
                 }
             });
         });
