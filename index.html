@@ -1065,11 +1065,15 @@
         const navItems = document.querySelectorAll('.bottom-nav-item');
 
         function updateActiveNav() {
-            const scrollMid = window.scrollY + window.innerHeight / 2;
-            let activeIndex = 0; // About is default
-            sections.forEach((section, i) => {
-                if (section && section.offsetTop <= scrollMid) activeIndex = i + 1;
-            });
+            const scrollY = window.scrollY;
+            const threshold = 80;
+            const projectsAt = sections[0] ? sections[0].offsetTop - threshold : Infinity;
+            const contactAt  = sections[1] ? sections[1].offsetTop - threshold : Infinity;
+
+            let activeIndex = 0;
+            if (scrollY >= contactAt) activeIndex = 2;
+            else if (scrollY >= projectsAt) activeIndex = 1;
+
             navItems.forEach((item, i) => item.classList.toggle('active', i === activeIndex));
         }
 
