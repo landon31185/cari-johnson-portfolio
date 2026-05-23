@@ -554,202 +554,9 @@
             width: 100%;
         }
 
-        /* Bottom Navigation */
+        /* Bottom Nav — Liquid Glass pill, mobile only */
         .bottom-nav {
-            display: none !important;
-        }
-
-        body.has-bottom-nav {
-            padding-bottom: 0;
-            padding-top: 60px;
-        }
-
-        /* Mobile Menu Button */
-        .menu-toggle {
             display: none;
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            width: 60px;
-            height: 60px;
-            background: var(--dark);
-            border: 2px solid var(--coral);
-            border-radius: 50%;
-            z-index: 1000;
-            cursor: pointer;
-            font-family: "Playfair Display", serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        .menu-toggle:active {
-            transform: scale(0.95);
-        }
-
-        /* Modal Menu */
-        .mobile-menu-modal {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            top: 0;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1001;
-            animation: fadeInOverlay 0.3s ease;
-        }
-
-        .mobile-menu-modal.active {
-            display: flex;
-        }
-
-        @keyframes fadeInOverlay {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .mobile-menu-content {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--dark);
-            border-top: 2px solid var(--coral);
-            border-radius: 24px 24px 0 0;
-            padding: 32px 20px;
-            max-height: 85vh;
-            overflow-y: auto;
-            animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(100%);
-            }
-            to {
-                transform: translateY(0);
-            }
-        }
-
-        .mobile-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 32px;
-        }
-
-        .mobile-menu-close {
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 28px;
-            cursor: pointer;
-            padding: 0;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: color 0.2s ease;
-        }
-
-        .mobile-menu-close:active {
-            color: var(--coral);
-        }
-
-        .mobile-menu-section {
-            margin-bottom: 40px;
-        }
-
-        .mobile-menu-section h3 {
-            color: var(--white);
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-family: "Outfit", sans-serif;
-        }
-
-        .mobile-menu-item {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: block;
-            transition: color 0.2s ease;
-            font-size: 15px;
-        }
-
-        .mobile-menu-item:last-child {
-            border-bottom: none;
-        }
-
-        .mobile-menu-item:active {
-            color: var(--coral);
-        }
-
-        .mobile-menu-section-divider {
-            height: 1px;
-            background: var(--coral);
-            margin: 32px 0;
-        }
-
-        .mobile-menu-about {
-            background: rgba(255, 65, 78, 0.1);
-            border-left: 3px solid var(--coral);
-            padding: 16px;
-            margin: 24px 0;
-            border-radius: 4px;
-        }
-
-        .mobile-menu-about h4 {
-            color: var(--white);
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-family: "Outfit", sans-serif;
-        }
-
-        .mobile-menu-about p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 13px;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        .mobile-menu-contact {
-            padding-top: 24px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .mobile-menu-contact h4 {
-            color: var(--white);
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-family: "Outfit", sans-serif;
-        }
-
-        .mobile-menu-contact-link {
-            color: var(--coral);
-            text-decoration: none;
-            display: block;
-            padding: 8px 0;
-            font-size: 13px;
-            transition: opacity 0.2s ease;
-        }
-
-        .mobile-menu-contact-link:active {
-            opacity: 0.8;
         }
 
         /* Scroll-triggered nav collapse */
@@ -850,7 +657,7 @@
         /* Mobile Optimizations */
         @media (max-width: 767px) {
             body {
-                padding-bottom: 0;
+                padding-bottom: 90px;
             }
 
             .top-nav {
@@ -861,8 +668,52 @@
                 display: none;
             }
 
-            .menu-toggle {
+            .bottom-nav {
                 display: flex;
+                position: fixed;
+                bottom: 24px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1000;
+                align-items: center;
+                gap: 4px;
+                border-radius: 100px;
+                padding: 6px;
+                background: rgba(255, 255, 255, 0.22);
+                backdrop-filter: blur(24px) saturate(200%);
+                -webkit-backdrop-filter: blur(24px) saturate(200%);
+                border: 1.5px solid rgba(255, 255, 255, 0.55);
+                box-shadow:
+                    0 12px 40px rgba(0, 0, 0, 0.14),
+                    0 4px 12px rgba(0, 0, 0, 0.08),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+            }
+
+            .bottom-nav-item {
+                font-family: "Outfit", sans-serif;
+                font-size: 12px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                color: var(--dark);
+                text-decoration: none;
+                padding: 10px 20px;
+                border-radius: 100px;
+                transition: background 0.25s ease, color 0.25s ease;
+                white-space: nowrap;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+
+            .bottom-nav-item::after {
+                display: none;
+            }
+
+            .bottom-nav-item:hover,
+            .bottom-nav-item.active {
+                background: rgba(255, 65, 78, 0.14);
+                color: var(--coral);
             }
 
             section {
@@ -1167,95 +1018,37 @@
         </section>
     </main>
 
-    <!-- Mobile Menu Button -->
-    <button class="menu-toggle" id="menuToggle">CJ</button>
-
-    <!-- Mobile Menu Modal -->
-    <div class="mobile-menu-modal" id="mobileMenuModal">
-        <div class="mobile-menu-content">
-            <div class="mobile-menu-header">
-                <div></div>
-                <button class="mobile-menu-close" id="menuClose">&times;</button>
-            </div>
-
-            <!-- Case Studies Section -->
-            <div class="mobile-menu-section">
-                <h3>Case Studies</h3>
-                <a href="#projects" class="mobile-menu-item">Digital Lending Redesign</a>
-                <a href="#projects" class="mobile-menu-item">Member Portal Overhaul</a>
-                <a href="#projects" class="mobile-menu-item">Fraud Detection UX</a>
-                <a href="#projects" class="mobile-menu-item">Loan Officer Dashboard</a>
-                <a href="#projects" class="mobile-menu-item">Internal Tool Redesign</a>
-            </div>
-
-            <div class="mobile-menu-section-divider"></div>
-
-            <!-- About Section -->
-            <div class="mobile-menu-about">
-                <h4>About Cari</h4>
-                <p>UX Designer, 5 years in financial services. Turning member friction into measurable outcomes at WSECU.</p>
-            </div>
-
-            <!-- Contact Section -->
-            <div class="mobile-menu-contact">
-                <h4>Get In Touch</h4>
-                <a href="mailto:cari@example.com" class="mobile-menu-contact-link">cari@example.com</a>
-                <a href="https://linkedin.com/in/cari-johnson" target="_blank" class="mobile-menu-contact-link">LinkedIn</a>
-                <a href="#" class="mobile-menu-contact-link">Download Resume</a>
-            </div>
-        </div>
-    </div>
+    <!-- Bottom Nav (mobile) -->
+    <nav class="bottom-nav" aria-label="Main navigation">
+        <a href="#projects" class="bottom-nav-item">Work</a>
+        <a href="#about" class="bottom-nav-item">About</a>
+        <a href="#contact" class="bottom-nav-item">Contact</a>
+    </nav>
 
     <script>
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('#menuToggle');
-        const menuModal = document.querySelector('#mobileMenuModal');
-        const menuClose = document.querySelector('#menuClose');
-        const menuItems = document.querySelectorAll('.mobile-menu-item');
-
-        if (menuToggle) {
-            menuToggle.addEventListener('click', () => {
-                menuModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        }
-
-        if (menuClose) {
-            menuClose.addEventListener('click', () => {
-                menuModal.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        }
-
-        // Close menu when clicking on a menu item
-        menuItems.forEach(item => {
-            item.addEventListener('click', () => {
-                menuModal.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-
-        // Close menu when clicking on overlay
-        menuModal.addEventListener('click', (e) => {
-            if (e.target === menuModal) {
-                menuModal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Collapse nav on scroll (desktop only)
+        // Collapse top nav on scroll (desktop only)
         const topNav = document.querySelector('.top-nav');
         if (topNav) {
             window.addEventListener('scroll', () => {
-                const currentScrollY = window.scrollY;
-
-                if (currentScrollY > 50) {
-                    topNav.classList.add('scrolled');
-                } else {
-                    topNav.classList.remove('scrolled');
-                }
+                topNav.classList.toggle('scrolled', window.scrollY > 50);
             });
         }
+
+        // Scroll spy — highlight active section in bottom nav
+        const sections = ['projects', 'about', 'contact'].map(id => document.getElementById(id));
+        const navItems = document.querySelectorAll('.bottom-nav-item');
+
+        function updateActiveNav() {
+            const scrollMid = window.scrollY + window.innerHeight / 2;
+            let activeIndex = 0;
+            sections.forEach((section, i) => {
+                if (section && section.offsetTop <= scrollMid) activeIndex = i;
+            });
+            navItems.forEach((item, i) => item.classList.toggle('active', i === activeIndex));
+        }
+
+        window.addEventListener('scroll', updateActiveNav, { passive: true });
+        updateActiveNav();
     </script>
 </body>
 </html>
