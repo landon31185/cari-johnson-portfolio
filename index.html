@@ -1027,7 +1027,19 @@
 
     <script>
         history.scrollRestoration = 'manual';
+        if (window.location.hash) history.replaceState(null, '', window.location.pathname);
         window.scrollTo(0, 0);
+
+        // Intercept all in-page anchor clicks to prevent hash from entering the URL
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', e => {
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
 
         // Collapse top nav on scroll (desktop only)
         const topNav = document.querySelector('.top-nav');
