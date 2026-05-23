@@ -1,0 +1,19 @@
+{
+  "name": "cari-johnson-portfolio",
+  "version": "1.0.0",
+  "description": "UX Designer Portfolio - Cari Johnson | Financial Services | JTBD + OOUX",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "start": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "ux-design",
+    "portfolio",
+    "financial-services",
+    "jtbd",
+    "ooux"
+  ],
+  "author": "Cari Johnson",
+  "license": "MIT"
+}
