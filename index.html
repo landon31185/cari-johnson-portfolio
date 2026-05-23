@@ -1026,6 +1026,9 @@
     </nav>
 
     <script>
+        history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
+
         // Collapse top nav on scroll (desktop only)
         const topNav = document.querySelector('.top-nav');
         if (topNav) {
