@@ -1048,7 +1048,7 @@
             function step(ts) {
                 if (!startTime) startTime = ts;
                 const t = Math.min((ts - startTime) / duration, 1);
-                const ease = t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
+                const ease = 1 - Math.pow(1 - t, 4); // ease-out quart: fast start, soft brake
                 window.scrollTo(0, startY + diff * ease);
                 if (t < 1) requestAnimationFrame(step);
             }
@@ -1061,7 +1061,7 @@
                 const target = document.querySelector(link.getAttribute('href'));
                 if (target) {
                     e.preventDefault();
-                    smoothScrollTo(target.offsetTop, 650);
+                    smoothScrollTo(target.offsetTop, 500);
                 }
             });
         });
