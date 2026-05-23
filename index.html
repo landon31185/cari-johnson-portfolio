@@ -780,7 +780,7 @@
             }
 
             #contact {
-                padding: 60px 20px 80px;
+                padding: 60px 20px 160px;
             }
         }
 
@@ -1080,12 +1080,13 @@
 
         function updateActiveNav() {
             const scrollY = window.scrollY;
+            const atBottom = (window.innerHeight + scrollY) >= document.body.scrollHeight - 10;
             const threshold = 80;
             const projectsAt = sections[0] ? sections[0].offsetTop - threshold : Infinity;
             const contactAt  = sections[1] ? sections[1].offsetTop - threshold : Infinity;
 
             let activeIndex = 0;
-            if (scrollY >= contactAt) activeIndex = 2;
+            if (atBottom || scrollY >= contactAt) activeIndex = 2;
             else if (scrollY >= projectsAt) activeIndex = 1;
 
             navItems.forEach((item, i) => item.classList.toggle('active', i === activeIndex));
