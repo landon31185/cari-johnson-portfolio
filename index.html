@@ -231,7 +231,7 @@
 
         .hero-subtitle {
             font-size: 14px;
-            color: var(--coral);
+            color: var(--dark);
             margin-bottom: 16px;
             font-weight: 600;
             letter-spacing: 1px;
@@ -368,6 +368,9 @@
             opacity: 0;
             animation: fadeInUp 0.6s ease-out forwards;
             box-shadow: none;
+            display: block;
+            text-decoration: none;
+            color: inherit;
         }
 
         @keyframes fadeInUp {
@@ -503,6 +506,33 @@
 
         .about-container p:last-child {
             margin-bottom: 0;
+        }
+
+        .about-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            opacity: 0;
+            animation: fadeIn 0.6s ease-out 0.4s forwards;
+        }
+
+        .about-list li {
+            padding-left: 24px;
+            position: relative;
+            line-height: 1.7;
+            font-size: 17px;
+            color: var(--text-muted);
+        }
+
+        .about-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--coral);
+            font-weight: 700;
         }
 
         /* Contact Section */
@@ -947,12 +977,12 @@
         <section id="about">
             <div class="about-container">
                 <h2>How I Approach Design</h2>
-                <p>Five years in financial services, I've learned that great design isn't about beautiful interfaces—it's about systems that change behavior. Early in my career, I would optimize for visual polish. Now I start with constraints: regulatory guardrails, legacy systems, member pain. That's where the real work lives.</p>
-
-                <p>I lean on JTBD (Jobs to Be Done) and OOUX (Object-Oriented UX) to ground decisions. These frameworks aren't decorative—they're decision-making tools. JTBD helps me understand the real job a member is trying to do. OOUX helps me design systems that scale, not just screens. The result: products that ship faster and last longer.</p>
-
-                <p>I've integrated Claude and Cursor into my workflow to work faster at the thinking level. I use LLMs to synthesize qualitative research and surface behavioral patterns in hours instead of days. Cursor helps me collaborate with engineers on handoff friction—turning Figma components into code faster than traditional specs. These tools are amplifiers, not replacements; they free me to focus on strategic decisions.</p>
-
+                <p>Five years in financial services taught me one thing: great design is about systems that change behavior — not just beautiful interfaces.</p>
+                <ul class="about-list">
+                    <li><strong>JTBD + OOUX</strong> — Jobs to Be Done tells me what members are actually trying to accomplish. Object-Oriented UX helps me build systems that scale, not just screens. The result: products that ship faster and last longer.</li>
+                    <li><strong>Constraints first</strong> — I start with regulatory guardrails, legacy systems, and member pain points. That's where the real design work lives.</li>
+                    <li><strong>AI-augmented workflow</strong> — I use <strong>Claude</strong> and <strong>Cursor</strong> to synthesize qualitative research in hours and reduce handoff friction with engineering teams.</li>
+                </ul>
                 <p>Let's talk about how systems-thinking and outcomes-driven design can reduce member friction on your platform.</p>
             </div>
         </section>
@@ -966,44 +996,44 @@
                 <div class="container">
                     <div class="project-grid">
                         <!-- Project 1 -->
-                        <div class="project-card">
+                        <a href="#" class="project-card">
                             <h3>Reduced Member Onboarding Friction by 40%</h3>
                             <p class="project-meta">Lead Designer · Credit Union · 2024</p>
                             <p class="project-copy">Navigated legacy API constraints with engineering team. Shipped in 6-week sprint. Increased completion rate by 3 days on average, measurable drop in support tickets.</p>
-                            <a href="#" class="project-cta">Read Case Study →</a>
-                        </div>
+                            <span class="project-cta">Read Case Study →</span>
+                        </a>
 
                         <!-- Project 2 -->
-                        <div class="project-card">
+                        <a href="#" class="project-card">
                             <h3>Increased Mobile Loan Completions by 35%</h3>
                             <p class="project-meta">Product Designer · Credit Union · 2023</p>
                             <p class="project-copy">Close collaboration with frontend team on handoff friction. V1 user testing revealed abandonment at signature step; V2 addressed core friction points.</p>
-                            <a href="#" class="project-cta">Read Case Study →</a>
-                        </div>
+                            <span class="project-cta">Read Case Study →</span>
+                        </a>
 
                         <!-- Project 3 -->
-                        <div class="project-card">
+                        <a href="#" class="project-card">
                             <h3>Increased Rewards Adoption by 25%, Engagement +60%</h3>
                             <p class="project-meta">Senior Designer · Credit Union · 2023</p>
                             <p class="project-copy">Early in my career, I would have optimized for aesthetics. Now I optimize for behavior. This project taught me systems thinking: why members avoid rewards, not just how to present them.</p>
-                            <a href="#" class="project-cta">Read Case Study →</a>
-                        </div>
+                            <span class="project-cta">Read Case Study →</span>
+                        </a>
 
                         <!-- Project 4 -->
-                        <div class="project-card">
+                        <a href="#" class="project-card">
                             <h3>Shipped Money Transfer Feature 40% Faster</h3>
                             <p class="project-meta">Lead Designer · Credit Union · 2024</p>
                             <p class="project-copy">Used design-to-code tooling (Cursor, Claude) to reduce handoff friction with engineering. AI-assisted component generation saved 2 weeks without sacrificing quality.</p>
-                            <a href="#" class="project-cta">Read Case Study →</a>
-                        </div>
+                            <span class="project-cta">Read Case Study →</span>
+                        </a>
 
                         <!-- Project 5 -->
-                        <div class="project-card">
+                        <a href="#" class="project-card">
                             <h3>Cut Compliance Review Time by 50%</h3>
                             <p class="project-meta">UX / Systems Thinker · Credit Union · 2022</p>
                             <p class="project-copy">Internal tool, high business impact. Standardized 12 manual processes into single dashboard workflow. NDA-restricted—full metrics available upon request.</p>
-                            <a href="#" class="project-cta">Read Case Study →</a>
-                        </div>
+                            <span class="project-cta">Read Case Study →</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1012,7 +1042,7 @@
         <!-- Contact Section -->
         <section id="contact">
             <div class="contact-container">
-                <h2>Let's Talk About Member-First Product Design</h2>
+                <h2>Get In Touch</h2>
                 <div class="contact-items">
                     <div class="contact-item">
                         <strong>Email:</strong><br>
