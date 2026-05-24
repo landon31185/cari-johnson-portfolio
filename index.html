@@ -18,7 +18,7 @@
     <meta name="twitter:image" content="https://cari-johnson-portfolio.vercel.app/cari-headshot.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -54,23 +54,23 @@
 
         /* Typography Scale */
         h1 {
-            font-family: "Fjalla One", sans-serif;
+            font-family: "Inter", sans-serif;
             font-size: 48px;
-            font-weight: 700;
+            font-weight: 900;
             line-height: 1.1;
             margin-bottom: 16px;
             color: var(--dark);
-            letter-spacing: -0.015em;
+            letter-spacing: -0.03em;
         }
 
         h2 {
-            font-family: "Fjalla One", sans-serif;
+            font-family: "Inter", sans-serif;
             font-size: 32px;
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 32px;
             color: var(--dark);
-            letter-spacing: -0.01em;
+            letter-spacing: -0.02em;
         }
 
         h3 {
@@ -129,14 +129,14 @@
             transition: all 0.3s ease;
             min-height: 44px;
             min-width: 44px;
-            box-shadow: 0 8px 20px rgba(255, 65, 78, 0.3);
+            box-shadow: 0 4px 16px rgba(255, 65, 78, 0.16);
             letter-spacing: 0.5px;
             text-transform: uppercase;
         }
 
         button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(255, 65, 78, 0.4);
+            box-shadow: 0 8px 24px rgba(255, 65, 78, 0.22);
         }
 
         button:active {
@@ -184,7 +184,7 @@
             height: 500px;
             background: radial-gradient(circle, var(--coral) 0%, var(--orange) 100%);
             border-radius: 50%;
-            opacity: 0.15;
+            opacity: 0.07;
             top: 50%;
             right: -100px;
             transform: translateY(-50%);
@@ -246,6 +246,16 @@
             line-height: 1.7;
             max-width: none;
             animation: slideInDown 0.8s ease-out 0.3s both;
+        }
+
+        .hero-credentials {
+            font-family: "Outfit", sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(26, 26, 26, 0.5);
+            letter-spacing: 0.3px;
+            margin-top: 16px;
+            animation: slideInDown 0.8s ease-out 0.6s both;
         }
 
         .hero-photo {
@@ -407,7 +417,7 @@
         }
 
         .project-card:hover {
-            box-shadow: 0 8px 24px rgba(255, 65, 78, 0.15);
+            box-shadow: 0 4px 16px rgba(255, 65, 78, 0.08);
             transform: translateY(-4px);
         }
 
@@ -642,12 +652,12 @@
         }
 
         .nav-brand a {
-            font-family: "Fjalla One", sans-serif;
+            font-family: "Inter", sans-serif;
             font-size: 20px;
             font-weight: 700;
             color: var(--dark);
             text-decoration: none;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.3px;
             transition: color 0.3s ease, font-size 0.3s ease;
         }
 
@@ -957,12 +967,13 @@
         <section class="hero" id="hero">
             <div class="hero-accent-dots"></div>
             <div class="hero-content">
-                <h1>UX Designer</h1>
-                <p class="hero-subtitle">Financial Services · JTBD + OOUX · 5 Years</p>
+                <h1>Product Designer</h1>
+                <p class="hero-subtitle">Financial Services · 5 Years</p>
                 <p class="hero-tagline">Turning member friction into measurable product outcomes at WSECU</p>
                 <div class="hero-cta-group">
                     <button onclick="smoothScrollTo(document.getElementById('projects').offsetTop, 650)">View My Work</button>
                 </div>
+                <p class="hero-credentials">5+ years · 100k+ members impacted · Enterprise complexity</p>
             </div>
             <img
                 src="cari-headshot.png"
